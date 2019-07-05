@@ -15987,3 +15987,23 @@ html {
     z-index: auto;
   }
 }
+
+.nav {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2em;
+}
+
+.nav li {
+  list-style: none;
+}
+
+.nav li a {
+  font-size: 1em;
+  border-radius: .3em;
+  background-color: #fff;
+  padding: .5rem 1rem;
+  color: #000;
+  text-decoration: none;
+}
