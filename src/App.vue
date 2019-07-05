@@ -11,6 +11,9 @@
 	    	<li>
 	    		<router-link to="/toggle">Toggle</router-link>
 	    	</li>
+	    	<li>
+	    		<router-link to="/modal">Modal</router-link>
+	    	</li>
 	    </ul>
 	    <!-- route outlet -->
   		<!-- component matched by the route will render here -->
