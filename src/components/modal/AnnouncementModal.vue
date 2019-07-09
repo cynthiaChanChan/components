@@ -18,7 +18,10 @@
 
 <script>
 export default {
-  props: ["show"],
+  props: {
+    show: {required: true},
+    preventBackgroundScrolling: {default: false}
+  },
   created() {
     const escapeHandler = e => {
       if (e.key === "Escape" && this.show) {
@@ -29,6 +32,18 @@ export default {
     this.$once("hook:destroyed", () => {
       document.removeEventListener("keydown", escapeHandler)
     })
+  },
+  watch: {
+    show: {
+      handler(show) {
+        if (show) {
+          this.preventBackgroundScrolling && document.body.style.setProperty('overflow', 'hidden');
+        } else {
+          this.preventBackgroundScrolling && document.body.style.removeProperty('overflow');
+        }
+      },
+      immediate: true // the callback will be called immediately after the start of the observation 
+    }
   },
   methods: {
     dismiss() {
